@@ -42,10 +42,17 @@ form.onsubmit = function(event) {
   
   const isFormValid = validateForm(baseData, validations);
 
+  moveFocusToFirstInvalid();
+
   if (isFormValid) displayBanner(banner);
 }
 
 // helper functions
+function moveFocusToFirstInvalid() {
+  const invalidInput = document.querySelector('[aria-invalid="true"]');
+  invalidInput?.focus();
+}
+
 function displayBanner(banner) {
     setTimeout(() => {
       banner.classList.remove("hidden");
