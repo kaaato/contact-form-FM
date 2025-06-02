@@ -1,52 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <title>Frontend Mentor | Contact form</title>
+    <link href="./styles.css" rel="stylesheet" />
+    <script src="./main.js" defer></script>
+  </head>
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Contact form</title>
+  <body class="page">
+    <main class="main">
+      <h1 class="visually-hidden">An example of form design</h1>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
-</head>
-<body>
+      <form class="form" novalidate>
+        <h2 class="form__title">Contact Us</h2>
 
-  Contact Us
+        <div class="form-group">
+          <label for="first-name">
+            First Name
+            <span class="required" aria-hidden="true">*</span>
+            <!-- <span class="visually-hidden">required</span> -->
+          </label>
+          <input class="border--error" id="first-name" type="text" name="firstName" autocomplete="given-name" aria-describedby="error--first-name" required />
+          <div id="error--first-name" aria-live="assertive" data-error-text="This field is required"></div>
+        </div>
+        
+        <div class="form-group">
+          <label for="last-name">
+            Last Name
+            <span class="required" aria-hidden="true">*</span>
+            <!-- <span class="visually-hidden"> required</span> -->
+          </label>
+          <input class="border--error" id="last-name" type="text" name="lastName" autocomplete="family-name" aria-describedby="error--last-name" required />
+          <div id="error--last-name" aria-live="assertive" data-error-text="This field is required"></div>
+        </div>
 
-  First Name
-  This field is required
+        <div class="form-group">
+          <label for="email">
+            Email Address
+            <span class="required" aria-hidden="true">*</span>
+            <!-- <span class="visually-hidden">required</span> -->
+          </label>
+          <input class="border--error" id="email" type="email" name="email" autocomplete="email" aria-describedby="error--email" required />
+          <div id="error--email" aria-live="assertive" data-error-text="Please enter a valid email address"></div>
+        </div>
+        
+        <fieldset class="form__fieldset">
+          <legend class="fieldset__legend">
+            Query Type
+            <span class="required" aria-hidden="true">*</span>
+            <!-- <span class="visually-hidden">required</span> -->
+          </legend>
 
-  Last Name
-  This field is required
+          <label class="form__label--radio" for="radio-1">
+              <input class="visually-hidden" id="radio-1" type="radio" name="about" value="general" aria-describedby="error--radio" required />
+              General Enquiry
+          </label>
 
-  Email Address
-  Please enter a valid email address
-  This field is required
+          <label class="form__label--radio" for="radio-2">
+              <input class="visually-hidden" id="radio-2" type="radio" name="about" value="support" aria-describedby="error--radio" />              
+              Support Request
+          </label>
 
-  Query Type
-  General Enquiry
-  Support Request
-  Please select a query type
+          <div id="error--radio" aria-live="assertive" data-error-text="Please select a query type"></div>
+        </fieldset>
+        
+        <div class="form-group">
+          <label for="message">
+            Message
+            <span class="required" aria-hidden="true">*</span>
+            <!-- <span class="visually-hidden">required</span> -->
+          </label>
+          <textarea class="form__textarea border--error" id="message" name="message" aria-describedby="error--message" required></textarea>
+          <div id="error--message" aria-live="assertive" data-error-text="This field is required"></div>
+        </div>
+        
+        <div class="form-group--checkbox">
+          <label class="form__label--checkbox" for="consent">
+            <input class="visually-hidden" id="consent" type="checkbox" name="consent" value="given" aria-describedby="error--checkbox" required />
+            <span>I consent to being contacted by the team<span class="required" aria-hidden="true">*</span></span>
+              <!-- <span class="visually-hidden">required</span> -->                
+          </label>
+          <div id="error--checkbox" aria-live="assertive" data-error-text="To submit this form, please consent to being contacted"></div>
+        </div>
 
-  Message
-  This field is required
+        <button class="form__button">Submit</button>
+      </form>
 
-  I consent to being contacted by the team
-  To submit this form, please consent to being contacted
-
-  Submit
-
-  Message Sent!
-  Thanks for completing the form. We'll be in touch soon!
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
-</body>
+      <div class="notification-banner hidden" role="alert" aria-live="polite">
+        <img class="nb__img" src="./assets/images/icon-success-check.svg" alt="" />
+        <h3 class="nb__title" >Message Sent!</h3>
+        <p class="nb__text">Thanks for completing the form. We'll be in touch soon!</p>
+      </div>
+    </main>
+  </body>
 </html>
