@@ -1,7 +1,6 @@
 @font-face {
   font-family: "Karla";
   src:
-    local("Karla"),
     url("./assets/fonts/static/Karla-Regular.ttf") format(truetype);
     font-weight: 400;
     font-style: normal;
@@ -10,7 +9,6 @@
 @font-face {
   font-family: "Karla";
   src: 
-  local("Karla"),
   url("./assets/fonts/static/Karla-Bold.ttf") format(truetype);
   font-weight: 700;
   font-style: normal;
